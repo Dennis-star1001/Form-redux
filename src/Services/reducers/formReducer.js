@@ -1,38 +1,23 @@
 
-import { FIRST_NAME, LAST_NAME, AGE, ADDRESS, GENDER } from "../actions/type"
+import { BIO_DATA } from "../actions/type"
 
 const INITIAL_STATE = {
-    firstName: '',
-    lastName: '',
-    age: '',
-    address: '',
-    gender: ''
+    bioDataState: {
+        firstName: '',
+        lastName: '',
+        age: '',
+        address: '',
+        gender: ''
+    }
+
 }
 
 const formReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case FIRST_NAME:
+        case BIO_DATA:
             return {
-                ...state, firstName: action.payload
+                ...state, bioDataState: action.payload
             };
-        case LAST_NAME:
-            return {
-                ...state, lastName: action.payload
-            };
-
-        case ADDRESS:
-            return {
-                ...state, address: action.payload
-            }
-        case AGE:
-            return {
-                ...state, age: action.payload
-            }
-        case GENDER:
-            return {
-                ...state, gender: action.payload
-            }
-
 
         default:
             return state;
