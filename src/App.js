@@ -18,7 +18,9 @@ const App = ({ state, dispatchBioData }) => {
     };
     const res = await api("index.php", data)
     console.log(res)
-    // dispatchBioData("")
+    
+    console.log("data",data)
+   
 
   }
 
@@ -28,18 +30,19 @@ const App = ({ state, dispatchBioData }) => {
         <div className="form_field">
           <h2 className="title">Student Register</h2>
           <div >
+        
             <label>First name: {firstName}</label>
-            <input type='text' name="fname" required onChange={(e) => dispatchBioData({ ...state, firstName: e.target.value })} />
+            <input type='text' name="first_name" required onChange={(e) => dispatchBioData({ ...state, firstName: e.target.value })} />
 
 
             <label>Last name: {lastName}</label>
-            <input type='text' required onChange={(e) => dispatchBioData({ ...state, lastName: e.target.value })} />
+            <input type='text' name="last_name" required onChange={(e) => dispatchBioData({ ...state, lastName: e.target.value })} />
 
             <label>Address: {address} </label>
-            <input type='text' required onChange={(e) => dispatchBioData({ ...state, address: e.target.value })} />
+            <input type='text' name="address" required onChange={(e) => dispatchBioData({ ...state, address: e.target.value })} />
 
             <label>Age: {age}</label>
-            <input type='number' required onChange={(e) => dispatchBioData({ ...state, age: e.target.value })} />
+            <input type='number' name="age" required onChange={(e) => dispatchBioData({ ...state, age: e.target.value })} />
 
             <label>Gender:{gender}</label>
             <div className="gender_field">
@@ -53,7 +56,7 @@ const App = ({ state, dispatchBioData }) => {
               </div>
             </div>
 
-            {<button className="save_btn" onClick={handleSubmit}>Clear</button>}
+            <button className="save_btn" type="sumbit" onClick={handleSubmit}>Submit</button>
 
           </div>
         </div>

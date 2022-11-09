@@ -1,7 +1,7 @@
-const url = "http://localhost/react-form-backend";
+const url = "http://localhost/Student_Register_backend";
 
 export const api = async (page, data) => {
-    const request =await fetch(`${url}/${page}`, {
+    const request = await fetch(`${url}/${page}`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -9,7 +9,10 @@ export const api = async (page, data) => {
         },
         body: JSON.stringify(data)
     });
+    
 
     const res = await request.json();
+    console.log("response",res)
     return res;
+
 }
